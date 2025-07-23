@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <title>给你的一封信</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="passwordContainer">
+    <h2>宝贝请输入密码</h2>
+    <input type="password" id="passwordInput" placeholder="请输入密码" onkeydown="if(event.key==='Enter') checkPassword()" />
+    <br />
+    <button id="submitBtn" onclick="checkPassword()">在这里确认</button>
+    <p id="errorMsg">宝贝错啦！！!</p>
+  </div>
+
+  <div id="mainContent">
+    <audio id="bgMusic" loop preload="auto">
+      <source src="1.mp3" type="audio/mpeg" />
+      您的浏览器不支持音频播放。
+    </audio>
+
+    <div class="heart">❤️</div>
+    <h1>我喜欢你</h1>
+    <p>也许我不是最特别的，但我的心是真的想一直陪着你。<br />愿意给我一个机会吗？</p>
+
+    <div>
+      <button onclick="showAlbum()" class="jump-btn">👉 请按下这个按钮</button>
+    </div>
+  </div>
+
+  <div id="albumPage">
+    <div class="album">
+      <div class="photo-card">
+        <div class="photo-front"><img src="1.jpg" alt="照片1"></div>
+        <div class="photo-back"><div class="photo-description">第一次见你，我的心就跳得特别快。</div></div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-front"><img src="2.jpg" alt="照片2"></div>
+        <div class="photo-back"><div class="photo-description">每一次聊天，我都觉得好幸福。</div></div>
+      </div>
+      <div class="photo-card">
+        <div class="photo-front"><img src="3.jpg" alt="照片3"></div>
+        <div class="photo-back"><div class="photo-description">希望我们可以一起留下更多回忆。</div></div>
+      </div>
+    </div>
+
+    <div class="typing" id="typingText"></div>
+
+    <div>
+      <button class="decision-btn" onclick="showExtraPhoto('agree')">同意</button>
+      <button class="decision-btn" onclick="showExtraPhoto('disagree')">不同意</button>
+    </div>
+
+    <div id="extraPhotos">
+      <img id="agreePhoto" src="4.png" alt="同意照片" />
+      <img id="disagreePhoto" src="5.png" alt="不同意照片" />
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
